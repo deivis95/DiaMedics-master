@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="DiaMedics.Views.TasksPageDiari"
+    xmlns:local2="DiaMedics.ViewModels"
+    xmlns:local="clr-namespace:DiaMedics;assembly=DiaMedics"
+    BindingContext="{x:Static local:ViewModelLocator.TasksViewModel}"
+    xmlns:sflv="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    Title="TAREAS DIARIAS">
+    
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            <local:DataTemplates.TemplateSelectorTasks x:Key="TemplateSelectorTasks"></local:DataTemplates.TemplateSelectorTasks>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    
+    <ContentPage.Content>
+        <ScrollView
+            
+            Padding="5,5,5,5">
+            <ScrollView.BindingContext>
+                 <local:ViewModels.TasksViewModel/>
+            </ScrollView.BindingContext>
+            
+            <sflv:SfListView
+                x:Name="listView"
+                ItemTemplate="{StaticResource TemplateSelectorTasks}"
+                ItemsSource="{Binding dataTasks}"
+                BackgroundColor="LightSlateGray"
+                SelectionBackgroundColor="BlanchedAlmond"
+                AutoFitMode="Height"
+                AllowSwiping="True"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="Fill"
+                DragStartMode="OnHold"
+                
+                >
+            </sflv:SfListView>
+            <!-- ItemTemplate="{StaticResource tasksSelector}" ItemsSource="{Binding dataTasks}"-->
+        </ScrollView>
+    </ContentPage.Content>
+   
+</ContentPage>
+ 
+
+    

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DiaMedics.Views.ExerciseSetmanal"
+    xmlns:local="clr-namespace:DiaMedics.ListViews"
+    xmlns:local2="clr-namespace:DiaMedics;assembly=DiaMedics"
+    BindingContext="{x:Static local2:ViewModelLocator.ExcerciseViewModel}"
+    xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms" 
+    xmlns:sflv="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    Title="Ejercicio Semanal">
+
+    <ContentPage.Content>
+        <Grid
+            Padding="5"
+            BackgroundColor="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <sflv:SfListView
+                Grid.Row="0"
+                x:Name="listView"
+                BackgroundColor="LightGray"
+                SelectionBackgroundColor="GreenYellow"
+                AutoFitMode="Height"
+                AllowSwiping="True"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="Fill"
+                DragStartMode="OnHold"
+                ItemSpacing="0">
+                <sflv:SfListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:ExerciseCell
+                            x:Name="taskcell">
+                        </local:ExerciseCell>
+                    </DataTemplate>
+                </sflv:SfListView.ItemTemplate>
+            </sflv:SfListView>
+
+            <Grid
+                Grid.Row="1"
+                BackgroundColor="Gray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Kilometres"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End">
+                </Label>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="Exercicis Realitzats"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    VerticalTextAlignment="Start">
+                </Label>
+                <progressBar:SfCircularProgressBar
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Progress="60"
+                    ProgressColor="OrangeRed"
+                    TrackColor="White">
+                    <progressBar:SfCircularProgressBar.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="{Binding Progress, StringFormat='{0}%'}"
+                                TextColor="DarkOrange"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Start">
+                            </Label>
+                            <Label
+                                Grid.Row="1"
+                                Text="Completado"
+                                TextColor="White"
+                                FontSize="Micro"
+                                VerticalTextAlignment="Start"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center">
+                            </Label>
+                        </Grid>
+                    </progressBar:SfCircularProgressBar.Content>
+                </progressBar:SfCircularProgressBar>
+
+                <progressBar:SfCircularProgressBar
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Progress="1"
+                    Minimum="0"
+                    Maximum="3"
+                    ProgressColor="DarkOrange"
+                    TrackColor="White">
+                </progressBar:SfCircularProgressBar>
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DiaMedics.Views.DietaSetmana"
+             xmlns:local="clr-namespace:DiaMedics;assembly=DiaMedics"
+             BindingContext="{x:Static local:ViewModelLocator.TasksViewModel}"
+             Title ="Dieta setmanal"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfSchedule.XForms;assembly=Syncfusion.SfSchedule.XForms">
+
+    <ContentPage.Content>
+        <syncfusion:SfSchedule 
+            x:Name="schedule"
+            ScheduleView="WeekView"
+            TimeIntervalHeight="180"
+            TimeInterval="180">
+            <syncfusion:SfSchedule.ViewHeaderStyle>
+                <syncfusion:ViewHeaderStyle
+			        BackgroundColor="#009688" 
+			        DayTextColor="#FFFFFF" 
+			        DateTextColor="#FFFFFF" 
+			        DayFontFamily="Arial" 
+			        DateFontFamily="Arial">
+                </syncfusion:ViewHeaderStyle>
+            </syncfusion:SfSchedule.ViewHeaderStyle>
+
+            <syncfusion:SfSchedule.WeekViewSettings>
+                <syncfusion:WeekViewSettings
+                    WorkStartHour="7"
+                    WorkEndHour="23">
+                    <syncfusion:WeekViewSettings.NonAccessibleBlocks>
+                        <syncfusion:NonAccessibleBlock
+                            StartTime="13"
+					        EndTime="14"  
+					        Text="DINAR"
+					        Color="Green">
+                        </syncfusion:NonAccessibleBlock>
+                        <syncfusion:NonAccessibleBlock
+                            StartTime="8"
+					        EndTime="9"  
+					        Text="ESMORZAR"
+					        Color="Green">
+                        </syncfusion:NonAccessibleBlock>
+                        <syncfusion:NonAccessibleBlock
+                            StartTime="21"
+					        EndTime="22"  
+					        Text="SOPAR"
+					        Color="Green">
+                        </syncfusion:NonAccessibleBlock>
+                    </syncfusion:WeekViewSettings.NonAccessibleBlocks>
+                </syncfusion:WeekViewSettings>
+            </syncfusion:SfSchedule.WeekViewSettings>
+        </syncfusion:SfSchedule>
+
+    </ContentPage.Content>
+    
+</ContentPage>
+          
+    
+   

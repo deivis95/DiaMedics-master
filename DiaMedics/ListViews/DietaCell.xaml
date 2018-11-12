@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DiaMedics.ListViews.DietaCell"
+    xmlns:syncfusionbuttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
+
+
+    <Grid
+        ColumnSpacing="1" 
+        Padding="3"
+       >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Frame
+            Grid.Column="0"
+            Grid.Row="0"
+            Padding="3"
+            >
+                <Frame
+                Grid.Column="0"
+                Grid.Row="0"   
+                BackgroundColor="LightGreen">
+                    <Image
+                        Source="if_coffee_04_3535188.png">
+                    </Image> 
+                </Frame>
+        </Frame>
+        <Frame
+            Grid.Column="1"
+            Grid.Row="0"
+            Padding="3"
+            BackgroundColor="White">
+            <Frame
+                Grid.Column="1"
+                Grid.Row="0"
+                BackgroundColor="LightGreen">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="10*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Image
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        VerticalOptions="Start"
+                        HorizontalOptions="Center"
+                        Scale="0.5"
+                        Source="round_fiber_manual_record_black_18dp.png">
+                    </Image>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Patata i mongeta"
+                        TextColor="Black">
+                    </Label>
+                    <syncfusionbuttons:SfCheckBox
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        HorizontalOptions="EndAndExpand"
+                        VerticalOptions="End"
+                        Text="Completado"
+                        TextColor="Black"
+                        CornerRadius="6"
+                        IsChecked="False"
+                        CheckedColor="LightGreen"
+                        UncheckedColor="Red">
+                    </syncfusionbuttons:SfCheckBox>
+                </Grid>
+            </Frame>
+        </Frame>
+    </Grid>
+</ViewCell>

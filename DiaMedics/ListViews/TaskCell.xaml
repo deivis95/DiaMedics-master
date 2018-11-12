@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+          x:Class="DiaMedics.ListViews.TaskCell">
+    <Grid 
+        ColumnSpacing="1" 
+        Padding="5">
+        <Grid.ColumnDefinitions>
+           <ColumnDefinition Width="0.01*"></ColumnDefinition>
+           <ColumnDefinition Width="*"></ColumnDefinition>
+           <ColumnDefinition Width="0.01*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame 
+            Grid.Row="0" 
+            Grid.Column="1" 
+            BackgroundColor="LightSeaGreen">
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+            </Frame.HasShadow>
+            <StackLayout>
+                <Image 
+                    IsVisible="{Binding HasAttachement}" 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Source="round_restaurant_black_18"
+                    TranslationY="-11">
+                </Image>
+                <Label 
+                    TextColor="White" 
+                    Text="TASCA"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Center"
+                    TranslationY="-55"
+                    FontAttributes="Bold"
+                    FontSize="Large">
+                </Label>
+                <Label
+                    Text="Me vas a comer el donut"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    TranslationY="-50"
+                    FontSize="Large">                   
+                </Label>
+                    
+            </StackLayout>
+        </Frame>
+    </Grid>
+</ViewCell>

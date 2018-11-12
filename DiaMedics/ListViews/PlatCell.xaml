@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DiaMedics.ListViews.PlatCell">
+    
+  <ViewCell.View>
+        <Grid
+            Padding="3"
+            BackgroundColor="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <BoxView
+                Grid.Row="0"
+                CornerRadius="5"               
+                BackgroundColor="LightGray">
+            </BoxView>
+
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="DarkSeaGreen"
+                Padding="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="Ingredients"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Large">
+                </Label>
+                <Image
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Source="round_fiber_manual_record_black_18dp.png"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Scale="0.7">
+                    
+                </Image>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Arròs blanc amb tomata natural"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </Label>
+                
+            </Grid>
+
+            <Grid
+                Grid.Row="2"
+                BackgroundColor="MediumSeaGreen">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Text="Elaboració"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="Large">
+                </Label>
+                <Image
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Source="round_fiber_manual_record_black_18dp.png"
+                    HorizontalOptions="End"
+                    VerticalOptions="Start"
+                    Scale="0.7">
+
+                </Image>
+                <Label
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Text="Bullir arròs 15 min"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </Label>
+
+            </Grid>
+
+            <Grid
+                Grid.Row="3"
+                BackgroundColor="SeaGreen">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Source="Camera_128.png"
+                    VerticalOptions="End"
+                    HorizontalOptions="Center"
+                    Scale="1.5">
+                    
+                </Image>
+                <Label
+                    Grid.Row="1"
+                    Text="Fes foto!"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start">
+                    
+                </Label>
+                
+            </Grid>
+        </Grid>
+    </ViewCell.View>
+</ViewCell>

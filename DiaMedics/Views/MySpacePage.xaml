@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="DiaMedics.Views.MySpacePage"
+    xmlns:local="clr-namespace:DiaMedics" 
+    xmlns:local2="clr-namespace:DiaMedics;assembly=DiaMedics"
+    BindingContext="{x:Static local2:ViewModelLocator.TasksViewModel}"
+    xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"  
+    Title="My Space">
+    
+    <ContentPage.Content>
+        <Grid
+            Padding="5"
+            BackgroundColor="LightSeaGreen">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="17*"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Picker
+                Grid.Column="0"
+                Grid.Row="0"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                TextColor="Black">
+            </Picker>
+            
+            <Grid
+                Padding="5"
+                Grid.Column="0"
+                Grid.Row="1"
+                BackgroundColor="LightSeaGreen">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="5*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="0.5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    Source="if_user_male4_172628.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Scale="1">
+                </Image>
+                <Image
+                    Grid.Column="0"
+                    Grid.Row="0"                   
+                    Source="Inventory128.png"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Start">
+                </Image>
+
+                <Grid
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalOptions="Start">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="3*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Text="Usuario"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        VerticalOptions="End"
+                        HorizontalOptions="Start">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Nivel"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        HorizontalOptions="Center"
+                        VerticalOptions="End">
+                    </Label>
+                    <Label
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Text="Doctor/a"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        HorizontalOptions="End"
+                        HorizontalTextAlignment="End"
+                        VerticalOptions="End">
+                    </Label>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Text="xxxxxxx"
+                        TextColor="White"
+                        VerticalOptions="Start">
+                    </Label>
+                    <Label
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Text="xxx"
+                        TextColor="White"
+                        HorizontalOptions="Center">
+                    </Label>
+                    <Label
+                        Grid.Column="2"
+                        Grid.Row="1"
+                        Text="xxxxxxx"
+                        TextColor="White"
+                        HorizontalOptions="End">
+                    </Label>
+
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="2"
+                        Text="Km totales"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center">
+                    </Label>
+                    <Label
+                        Grid.Column="2"
+                        Grid.Row="2"
+                        Text="Pasos totales"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        VerticalOptions="End"
+                        HorizontalOptions="Center">
+                    </Label>
+                    <progressBar:SfCircularProgressBar
+                        Grid.Column="0"
+                        Grid.Row="3"
+                        Progress="10"
+                        ProgressColor="DarkOrange"
+                        Minimum="0"
+                        Maximum="100000"
+                        TrackColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Scale="1.4">
+                    </progressBar:SfCircularProgressBar>
+                    <progressBar:SfCircularProgressBar
+                        Grid.Column="2"
+                        Grid.Row="3"
+                        Progress="3300"
+                        ProgressColor="DarkOrange"
+                        Minimum="0"
+                        Maximum="1000000"
+                        TrackColor="White"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Scale="1.4">
+                    </progressBar:SfCircularProgressBar>
+
+                </Grid>
+
+            </Grid>
+
+            <Button
+                Margin="15,0,15,0"
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="AJUDA"
+                TextColor="White"
+                BackgroundColor="SeaGreen"
+                CornerRadius="5"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Start">
+            </Button>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

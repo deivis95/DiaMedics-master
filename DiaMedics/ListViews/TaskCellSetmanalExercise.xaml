@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:syncfusionbuttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+          x:Class="DiaMedics.ListViews.TaskCellSetmanalExercise"
+          xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms">
+    <Grid 
+        ColumnSpacing="1" 
+        Padding="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame 
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="WhiteSmoke"
+            Padding="5"
+            >
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+            </Frame.HasShadow>
+            <Frame
+                BackgroundColor="LightCoral"
+                Padding="2">
+                <Grid 
+                    ColumnSpacing="1" 
+                    Padding="2,2,2,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        IsVisible="{Binding HasAttachement}" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Source="gym.png"
+                        Scale="1"
+                        BackgroundColor="LightCoral"
+                        >
+                    </Image>
+                    <Label 
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        TextColor="White" 
+                        Text="EJERCICIOS SEMANALES"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="Large">
+                    </Label>
+                    <progressBar:SfCircularProgressBar
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Progress="75"
+                        ProgressColor="Green"
+                        SegmentCount="3"
+                        GapWidth="5"
+                        StartAngle="270"
+                        AnimationDuration="3">
+                    </progressBar:SfCircularProgressBar>
+                    <Grid
+                        Grid.Row="1"
+                        Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                       
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            TextColor="White"
+                            Text="caminar 10km"
+                            FontSize="Small"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+
+                        </Label>
+                        <progressBar:SfLinearProgressBar
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Progress="20"
+                            HorizontalOptions="Center"
+                            VerticalOptions="End"
+                            ProgressColor="Green"
+                            CornerRadius="5"
+                            AnimationDuration="3">
+                        </progressBar:SfLinearProgressBar>
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            TextColor="White"
+                            Text="Realitzar dos exercicis diaris"
+                            FontSize="Small"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+                        </Label>
+                        <progressBar:SfLinearProgressBar
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Progress="80"
+                            ProgressColor="Green"
+                            CornerRadius="5"
+                            VerticalOptions="End"
+                            AnimationDuration="3">
+                        </progressBar:SfLinearProgressBar>
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            TextColor="White"
+                            Text="completar 8 exercicis"
+                            FontSize="Small"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+                        </Label>
+                        <progressBar:SfLinearProgressBar
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Progress="75"
+                            ProgressColor="Green"
+                            CornerRadius="5"
+                            VerticalOptions="End"
+                            AnimationDuration="3">
+                        </progressBar:SfLinearProgressBar>
+                    </Grid>
+
+
+                </Grid>
+            </Frame>
+        </Frame>
+    </Grid>
+</ViewCell>

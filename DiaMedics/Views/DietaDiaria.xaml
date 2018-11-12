@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DiaMedics.Views.DietaDiaria"
+    xmlns:local="clr-namespace:DiaMedics.ListViews"
+    xmlns:local2="clr-namespace:DiaMedics;assembly=DiaMedics"
+    BindingContext="{x:Static local2:ViewModelLocator.DietViewModel}"
+    xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms" 
+    xmlns:sflv="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+    Title="DIETA DIARIA">
+    
+    <ContentPage.Resources>
+        
+        <ResourceDictionary>
+            <local:DataTemplates.TemplateSelectorDieta x:Key="TemplateSelectorDieta"></local:DataTemplates.TemplateSelectorDieta>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <Grid
+            BackgroundColor="WhiteSmoke"
+            RowSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <sflv:SfListView
+                Grid.Row="0"
+                Grid.Column="0"
+                x:Name="listViewdietadiari"
+                ItemTemplate="{StaticResource TemplateSelectorDieta}"
+                ItemsSource="{Binding dietaDay}"
+                BackgroundColor="LightGray"
+                SelectionBackgroundColor="GreenYellow"
+                AutoFitMode="Height"
+                AllowSwiping="True"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                DragStartMode="OnHold"
+                ItemSpacing="0">
+                
+            </sflv:SfListView>
+            
+            <Grid
+                Grid.Row="1"
+                Grid.Column="0"
+                BackgroundColor="LightGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="5*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Comidas completadas"
+                    TextColor="ForestGreen"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End">
+                </Label>
+
+                <progressBar:SfCircularProgressBar
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Progress="1"
+                    Minimum="0"
+                    Maximum="3"
+                    ProgressColor="ForestGreen"
+                    TrackColor="White">
+                    <progressBar:SfCircularProgressBar.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="{Binding Progress, StringFormat='{0}%'}"
+                                TextColor="White"
+                                HorizontalTextAlignment="Center"
+                                VerticalTextAlignment="Start">
+                            </Label>
+                            <Label
+                                Grid.Row="1"
+                                Text="Completado"
+                                TextColor="White"
+                                FontSize="Micro"
+                                VerticalTextAlignment="Start"
+                                VerticalOptions="Start"
+                                HorizontalOptions="Center">
+                            </Label>
+                        </Grid>
+                    </progressBar:SfCircularProgressBar.Content>
+                </progressBar:SfCircularProgressBar>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

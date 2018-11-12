@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+
+   xmlns:local="clr-namespace:DiaMedics.DataTemplates"
+    x:Class="DiaMedics.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            
+            <local:TemplateSelectorTasks x:Key="TemplateSelectorTasks"/>
+            <local:TemplateSelectorDieta x:Key="TemplateSelectorDieta"/>
+            <local:TemplateSelectorExercDiari x:Key="TemplateSelectorExercDiari"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

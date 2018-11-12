@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          xmlns:syncfusionbuttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+          x:Class="DiaMedics.ListViews.TaskDietCell">
+    <Grid 
+        ColumnSpacing="1" 
+        Padding="2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Frame 
+            Grid.Row="0"
+            Grid.Column="0"
+            BackgroundColor="WhiteSmoke"
+            Padding="5"
+            >
+            <Frame.HasShadow>
+                <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
+            </Frame.HasShadow>
+            <Frame
+                BackgroundColor="#8ae5ad"
+                Padding="2">
+                <Grid 
+                    ColumnSpacing="1" 
+                    Padding="2,2,2,2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="6*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="4*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image 
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        IsVisible="{Binding HasAttachement}" 
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Source="round_restaurant_black_18.png"
+                        Scale="1"
+                        BackgroundColor="#8ae5ad"
+                        >
+                    </Image>
+                    <Label 
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        TextColor="White" 
+                        Text="DIETA"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        FontAttributes="Bold"
+                        FontSize="Large">
+                    </Label>
+                    <syncfusionbuttons:SfCheckBox
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Text="completed"
+                        TextColor="Black"
+                        CheckedColor="Green"
+                        UncheckedColor="White">
+                    </syncfusionbuttons:SfCheckBox>
+                    <Grid
+                        Grid.Row="1"
+                        Grid.Column="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="8*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                            <RowDefinition Height="2.5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Image
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Source="punt_vermell"
+                            Scale="0.8"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start">
+
+                        </Image>
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Text="Esmorzar"
+                            FontSize="Small"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+
+                        </Label>
+                        <syncfusionbuttons:SfCheckBox
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Text="completed"
+                            TextColor="White"
+                            Scale="0.7"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            CheckedColor="Green"
+                            UncheckedColor="White">
+                        </syncfusionbuttons:SfCheckBox>
+
+
+                        <Image
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Source="punt_vermell"
+                            Scale="0.8"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start">
+
+                        </Image>
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Text="Dinar"
+                            FontSize="Small"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+                        </Label>
+                        <syncfusionbuttons:SfCheckBox
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Text="completed"
+                            TextColor="White"
+                            Scale="0.7"
+                            CheckedColor="Green"
+                            UncheckedColor="White">
+                        </syncfusionbuttons:SfCheckBox>
+
+                        <Image
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Source="punt_vermell"
+                            Scale="0.8"
+                            HorizontalOptions="End"
+                            VerticalOptions="Start">
+
+                        </Image>
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            TextColor="White"
+                            Text="Sopar"
+                            FontSize="Small"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start">
+                        </Label>
+                        <syncfusionbuttons:SfCheckBox
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Text="completed"
+                            TextColor="Black"
+                            Scale="0.7"
+                            CheckedColor="Green"
+                            UncheckedColor="White">
+                        </syncfusionbuttons:SfCheckBox>
+                    </Grid>
+
+
+                </Grid>
+            </Frame>
+        </Frame>
+    </Grid>
+</ViewCell>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="DiaMedics.Views.FotoPage">
+    <ContentPage.Content>
+        <Grid
+            BackgroundColor="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Column="0"
+                Grid.Row="0"
+                BackgroundColor="LightSlateGray"
+                CornerRadius="5">
+                <BoxView
+                    HeightRequest="100"
+                    WidthRequest="40"
+                    Color="LightGray"
+                    CornerRadius="5">
+                </BoxView>
+            </Frame>
+            <Grid
+                Padding="5"
+                Grid.Row="1"
+                BackgroundColor="LightSeaGreen">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image
+                    Grid.Row="0"
+                    Source="Camera_128.png"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Scale="1.5">
+                </Image>
+                <Label
+                    Grid.Row="1"
+                    Text="Fes Foto!"
+                    TextColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Start">
+                </Label>
+            </Grid>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

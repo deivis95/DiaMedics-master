@@ -1,0 +1,114 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microcharts.Forms" Version="0.7.1" />
+    <PackageReference Include="Mvvmicro" Version="0.10.17" />
+    <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
+    <PackageReference Include="Microcharts" Version="0.7.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="16.3.0.29" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="16.3.0.29" />
+    <PackageReference Include="Syncfusion.Xamarin.SfNavigationDrawer" Version="16.3.0.29" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPicker" Version="16.3.0.29" />
+    <PackageReference Include="Syncfusion.Xamarin.SfProgressBar" Version="16.3.0.29" />
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="16.3.0.29" />
+    <PackageReference Include="Xamarin.Forms" Version="3.3.0.967583" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.3.0.967583" />
+    <PackageReference Include="PSC.Xamarin.MvvmHelpers" Version="1.0.0" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.3.0" />
+    <PackageReference Include="UrhoSharp" Version="1.8.93" />
+    <PackageReference Include="UrhoSharp.Forms" Version="1.8.93" />
+    <PackageReference Include="XLabs.Forms" Version="2.0.5782" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="16.3.0.29" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="DataTemplates\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="AppService\" />
+    <Folder Include="Infraestructure\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="aloisdeniel:Microcharts: Create cross-platform %28Xamarin, Windows, ...%29 simple charts..webarchive" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Models\Entities\Chart.cs" />
+    <Compile Remove="Layouts\BarChart.cs" />
+    <Compile Remove="Layouts\LineMode.cs" />
+    <Compile Remove="Layouts\PointChart.cs" />
+    <Compile Remove="Layouts\PointMode.cs" />
+    <Compile Remove="Layouts\RadarChart.cs" />
+    <Compile Remove="Layouts\RadialGaugeChart.cs" />
+    <Compile Remove="ListViews\MyDataTemplateSelectorTask.cs" />
+    <Compile Remove="Infraestructure\InstanceLocator.cs" />
+    <Compile Remove="DataTemplates\TemplateSelectorTasksSetmanals.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ListViews\PlatCell.xaml.cs">
+      <DependentUpon>PlatCell.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DietTabbedPage.xaml.cs">
+      <DependentUpon>DietTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ExerciseDiari.xaml.cs">
+      <DependentUpon>ExerciseDiari.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TasksPageDiari.xaml.cs">
+      <DependentUpon>TasksPageDiari.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\DietPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="ListViews\DietaCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListViews\ExerciseCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListViews\PlatCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListViews\TaskCellExercise.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListViews\TaskCellPills.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ListViews\TaskCellSetmanalExercise.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DietaDiaria.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DietaSetmana.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ExerciseSetmanal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ExerciseTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FotoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PlatPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProgresPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TasksPageSetmanal.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\TasksTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

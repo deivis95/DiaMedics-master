@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+      xmlns="http://xamarin.com/schemas/2014/forms" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+      xmlns:local="clr-namespace:DiaMedics;assembly=DiaMedics" 
+      x:Class="DiaMedics.Views.MainPage"
+      xmlns:local2="DiaMedics.ViewModels"
+      BindingContext="{x:Static local:ViewModelLocator.MainViewModel}"
+      xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"  
+      xmlns:navigationdrawer="clr-namespace:Syncfusion.SfNavigationDrawer.XForms;assembly=Syncfusion.SfNavigationDrawer.XForms"
+      Title="Menú">
+
+    <ContentPage.Content>
+
+        <navigationdrawer:SfNavigationDrawer            
+            x:Name="navigationDrawer"
+            DrawerWidth="200"
+            DrawerHeaderHeight="180">
+            <navigationdrawer:SfNavigationDrawer.ContentView>
+                <Grid
+                    Padding="5,5,5,5"
+                    BackgroundColor="WhiteSmoke"
+                    BindingContext="{Binding Menu}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                        <RowDefinition Height="5*"></RowDefinition>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                        Padding="10,5,10,5"
+                        BackgroundColor="LightSeaGreen">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="3*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.8*"></RowDefinition>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                            <RowDefinition Height="0.5*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Scale="0.6"
+                            x:Name="hamburgerButton" 
+                            HorizontalOptions="Start"
+                            VerticalOptions="Start"
+                            BackgroundColor="LightSeaGreen" 
+                            Clicked="hamburgerButton_Clicked"/>
+
+                        <Label                       
+                            Text="Fitness"
+                            FontSize="Medium"
+                            TextColor="White"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start"
+                            TranslationY="-8">
+                        </Label>
+
+                        <progressBar:SfLinearProgressBar
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            Progress="75"                   
+                            ProgressColor="Green"
+                            CornerRadius="5"
+                            VerticalOptions="End"
+                            HorizontalOptions="CenterAndExpand">
+                        </progressBar:SfLinearProgressBar>
+
+                        <Label
+                            FontSize="Medium"
+                            Text="Health"
+                            TextColor="White"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start"
+                            TranslationY="-8">
+                        </Label>
+
+                        <progressBar:SfLinearProgressBar
+                            Grid.Column="2"
+                            Grid.Row="2"
+                            Progress="50"                    
+                            ProgressColor="Red"
+                            CornerRadius="5"
+                            VerticalOptions="Center">
+                        </progressBar:SfLinearProgressBar>
+
+                    </Grid>
+
+
+
+                    <Grid
+                        Grid.Column="0"
+                        Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        
+                    </Grid>
+
+
+
+                    <Grid  
+                        Grid.Row="2" 
+                        Grid.Column="0"
+                        BackgroundColor="WhiteSmoke">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Button
+                            BackgroundColor="LightSeaGreen"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Text="TAREAS"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Command="{Binding TasksCommand}"                     
+                            Image="Check_Box_24">
+                        </Button>
+
+                        <Button
+                            BackgroundColor="LightSeaGreen"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Text="ACTIVIDAD"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Command="{Binding ExerciseCommand}"                      
+                            Image="Athletics_24.png">
+                        </Button>
+
+                        <Button
+                            BackgroundColor="LightSeaGreen"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="2"
+                            Grid.Row="0"
+                            Text="DIETA"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Command="{Binding DietaCommand}"                     
+                            Image="Measuring_Tape_24.png">
+                        </Button>
+                        <Button
+                            BackgroundColor="LightSeaGreen"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Text="LOGROS"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Command="{Binding LogrosCommand}"                       
+                            Image="Trophy_24.png">
+                        </Button>
+                        <Button
+                            BackgroundColor="LightSeaGreen"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Text="MI ESPACIO"
+                            TextColor="White"
+                            CornerRadius="10"
+                            Command="{Binding MySpaceCommand}"                        
+                            Image="User_Profile_24.png">
+                        </Button>
+
+                        <Button
+                            BackgroundColor="LightSeaGreen"
+                            HorizontalOptions="FillAndExpand"
+                            Grid.Column="2"
+                            Grid.Row="1"
+                            Text="AYUDA"
+                            TextColor="White"
+                            CornerRadius="10"                       
+                            Image="Help_24.png">
+                        </Button>
+                    </Grid>
+
+                </Grid>
+
+            </navigationdrawer:SfNavigationDrawer.ContentView>
+            <navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
+                <Grid 
+                    BackgroundColor="LightGray">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Image 
+                        Source="if_user_male4_172628.png"
+                        Scale="1"
+                        HeightRequest="110" 
+                        Margin="0,10,0,0"  
+                        VerticalOptions="Center" 
+                        HorizontalOptions="Center">
+                    </Image>
+                    <Label 
+                        Text="Usuari" 
+                        Grid.Row="1" 
+                        HorizontalTextAlignment="Center" 
+                        HorizontalOptions="Center" 
+                        FontSize="20" 
+                        TextColor="Black">
+                    </Label>
+                </Grid>
+            </navigationdrawer:SfNavigationDrawer.DrawerHeaderView>
+            <navigationdrawer:SfNavigationDrawer.DrawerContentView>
+                <ListView 
+                    x:Name="listView" 
+                    ItemSelected="listView_ItemSelected"
+                    BackgroundColor="LightSeaGreen"
+                    SeparatorColor="Black">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout 
+                                    HeightRequest="40">
+                                    <Label 
+                                        Margin="15,7,0,0" 
+                                        Text="{Binding}"
+                                        TextColor="White"
+                                        FontSize="18">
+                                    </Label>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </navigationdrawer:SfNavigationDrawer.DrawerContentView>
+        </navigationdrawer:SfNavigationDrawer>
+    </ContentPage.Content>
+
+</ContentPage>
